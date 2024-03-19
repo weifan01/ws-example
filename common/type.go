@@ -24,12 +24,12 @@ type Event struct {
 	Payload json.RawMessage `json:"payload"`
 }
 
-// TestMessageEvent 测试消息 payload
-type TestMessageEvent struct {
+// TestMessage 测试消息 payload
+type TestMessage struct {
 	Message string `json:"message"`
 	From    string `json:"from"`
 }
-type NewTestMessageEvent struct {
-	TestMessageEvent
+type TestMessageEvent struct {
+	TestMessage
 	Sent time.Time `json:"sent"`
 }
