@@ -48,6 +48,7 @@ func (c *Client) writeMessages() {
 	// ticker 同方法发送ping，以避免对ws连接的并发写，比单独定义事件类型实现更简单
 	ticker := time.NewTicker(pingInterval)
 	defer func() {
+		c.connection.Close()
 		ticker.Stop()
 		c.reconnect()
 	}()
@@ -91,6 +92,7 @@ func (c *Client) writeMessages() {
 
 func (c *Client) readMessages() {
 	defer func() {
+		c.connection.Close()
 		c.reconnect()
 	}()
 
@@ -181,6 +183,7 @@ func (c *Client) reconnect() {
 	log.Println("reconnect to server")
 	client := connect()
 	c.connection = client
+	c.run()
 }
 
 func connect() *websocket.Conn {
