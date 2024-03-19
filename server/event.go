@@ -13,12 +13,12 @@ type EventHandler func(event common.Event, c *Client) error
 
 // SendMessageHandler 将收到的消息发送给其他客户端
 func SendMessageHandler(event common.Event, c *Client) error {
-	var chatEvent common.NewTestMessageEvent
+	var chatEvent common.TestMessageEvent
 	if err := json.Unmarshal(event.Payload, &chatEvent); err != nil {
 		return fmt.Errorf("bad payload in request: %v", err)
 	}
 
-	var broadMessage common.NewTestMessageEvent
+	var broadMessage common.TestMessageEvent
 	broadMessage.Sent = time.Now()
 	broadMessage.From = chatEvent.From
 	broadMessage.Message = "test message from server."

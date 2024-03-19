@@ -160,8 +160,8 @@ func (c *Client) produceMessage() {
 			return
 		case t := <-ticker.C:
 			log.Println("produce a message, current time: ", t)
-			testMessage := common.NewTestMessageEvent{
-				TestMessageEvent: common.TestMessageEvent{
+			testMessage := common.TestMessageEvent{
+				TestMessage: common.TestMessage{
 					Message: "This is a test message",
 					From:    "dev",
 				},
