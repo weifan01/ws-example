@@ -3,9 +3,12 @@ package main
 import (
 	"log"
 	"net/http"
+
+	"ws-example/common"
 )
 
 func main() {
+	log.Println("Current version: ", common.Version)
 	setupAPI()
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

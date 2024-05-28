@@ -1,14 +1,18 @@
 package main
 
 import (
+	"log"
 	"os"
 	"os/signal"
+
+	"ws-example/common"
 )
 
 var env string
 var router Handlers
 
 func main() {
+	log.Println("Current version: ", common.Version)
 	var interrupt = make(chan os.Signal, 1)
 	signal.Notify(interrupt, os.Interrupt)
 
