@@ -1,4 +1,4 @@
-module jenkins-deploy2
+module ws-example
 
 go 1.20
 

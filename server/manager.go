@@ -6,8 +6,9 @@ import (
 	"net/http"
 	"sync"
 
+	"ws-example/common"
+
 	"github.com/gorilla/websocket"
-	"jenkins-deploy2/common"
 )
 
 // Manager 用于处理客户端常规http请求，并将其升级为websocket连接，manager能够跟踪管理所有的客户端

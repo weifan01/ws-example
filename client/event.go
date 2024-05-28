@@ -4,7 +4,7 @@ import (
 	"errors"
 	"log"
 
-	"jenkins-deploy2/common"
+	"ws-example/common"
 )
 
 // EventHandler 事件处理器定义

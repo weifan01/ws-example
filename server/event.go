@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"jenkins-deploy2/common"
+	"ws-example/common"
 )
 
 // EventHandler 根据type路由到EventHandler函数

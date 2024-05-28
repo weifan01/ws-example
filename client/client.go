@@ -9,8 +9,9 @@ import (
 	"os/signal"
 	"time"
 
+	"ws-example/common"
+
 	"github.com/gorilla/websocket"
-	"jenkins-deploy2/common"
 )
 
 /*
@@ -192,7 +193,7 @@ func connect() *websocket.Conn {
 	header.Add("identification", os.Getenv("identification"))
 	conn, _, err := websocket.DefaultDialer.Dial(os.Getenv("serverAddress"), header)
 	if err != nil {
-		log.Println("Error connect to server, ", err.Error())
+		log.Fatalln("Error connect to server, ", err.Error())
 	}
 	return conn
 }

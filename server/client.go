@@ -4,8 +4,9 @@ import (
 	"encoding/json"
 	"log"
 
+	"ws-example/common"
+
 	"github.com/gorilla/websocket"
-	"jenkins-deploy2/common"
 )
 
 // ClientList 可以用来查找client的map，每个client都有一个manager的引用，用来管理client
